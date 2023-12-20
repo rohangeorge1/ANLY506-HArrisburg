@@ -11,9 +11,9 @@ library(dplyr)
 ```
 
 ```{r}
-df=read.csv("crimedata.csv")
-head(df)
-View(df)
+master=read.csv("crimedata.csv")
+head(master)
+View(master)
 ```
 
 
@@ -22,16 +22,21 @@ View(df)
 ```{r}
 
 #dplyr::filter(df, grepl('?', countyCode))
-str(df)
+str(master)
 ```
 
 
 
 ```{r}
-sum(is.na(df$countyCode))
+master[master == '?'] <- NA
+summary(is.na(master))
 ```
 
 ```{r}
+# all na value columns in one view
 
+cols_with_na <- colSums(is.na(master)) > 0
+missing_val = master[,cols_with_na, drop = FALSE]
+View(missing_val)
 ```
 
