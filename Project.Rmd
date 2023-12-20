@@ -1,0 +1,37 @@
+---
+title: "Project Start ANLY506"
+author: "Rohan"
+date: "12/19/2023"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(dplyr)
+```
+
+```{r}
+df=read.csv("crimedata.csv")
+head(df)
+View(df)
+```
+
+
+
+
+```{r}
+
+#dplyr::filter(df, grepl('?', countyCode))
+str(df)
+```
+
+
+
+```{r}
+sum(is.na(df$countyCode))
+```
+
+```{r}
+
+```
+
